@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;">&nbsp;<span style="font-family: 'LiberEmb';">СИНЯК ПОД ГЛАЗОМ</span></h2>
+<div style="text-align: center; "><img alt="sinyak_glaz1" src="../Imagess/sinyak_glaz1.jpeg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Синяк под глазом возникает из-за кровоизлияния в кожу во­круг глаза, обычно после пря­мого удара в эту область. Характер­ный вид может появиться не сразу, а проявиться постепенно, в течение нескольких дней, начиная с небольшого синячка, до кровоподтека, за­нимающего всю орбиту. Иногда си­няк под глазом может быть проявле­нием намного более серьезной трав­мы, вплоть до перелома черепа, осо­бенно если синяки появились вокруг обоих глаз или была черепно-мозго­вая травма.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>ЧТО ДЕЛАТЬ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Положите на область вокруг глаза холодный компресс или лед, заверну­тый в ткань, проследите, чтобы он плотно прилегал к коже. Подойдет и пакет замороженного гороха. Только следите, чтобы не было давления на сам глаз. Сделать это желательно как можно скорее после травмы, в идеа­ле — сразу и продолжать на протяже­нии 24—48 часов.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Признаки опасности:&nbsp;</strong>хотя боль­шинство травм, приводящих к появ­лению кровоподтека под глазом, не опасны, есть несколько признаков, которые могут свидетельствовать об обратном:</p>
+<ul style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><li>Кровоизлияние в переднюю камеру глаза (пространство между рогови­цей и радужкой) —&nbsp;<em>гифема</em>&nbsp;— серь­езная травма, которая может при­вести к нарушению зрения и повре­ждению роговицы. При гифеме вы можете увидеть тоненький ободок из красной крови в месте, где рого­вица (цветная часть глаза) перехо­дит в склеру (белая часть глаза).</li>
+</ul>
+<div style="text-align: center; orphans: 2; widows: 2;"><img alt="sinyak_glaz2" src="../Imagess/sinyak_glaz2.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<ul style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">
+<li style="text-align: justify;">Кровоизлияние в склеру означает, что повреждено само глазное ябло­ко и надо обязательно посетить врача, чтобы он проверил, нет ли в глазу внутренних повреждений.</li>
+<li style="text-align: justify; ">Немедленно обратитесь за меди­цинской помощью, если у ребенка есть нарушения зрения (двоится в глазах, предметы расплываются или все видится подернутым дымкой), сильная боль, имеется кровоизлия­ние в глаз или кровотечение из носа.</li>
+</ul>
+<div style="orphans: 2; text-align: justify; widows: 2;"><span style="font-family: 'LiberEmb';"><br/></span></div>
+<div style="orphans: 2; text-align: justify; widows: 2;"><span style="font-family: 'LiberEmb', serif; font-size: 17.33333396911621px; orphans: auto; text-align: right; widows: auto;"><br/></span></div>
+<div style="orphans: 2; text-align: right; widows: 2;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><span style="font-family: 'LiberEmb';"><br/></span></div>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

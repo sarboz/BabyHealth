@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;"><span style="font-family: 'LiberEmb';">УШНЫЕ ПРИВЕСКИ</span><br/></h2>
+<!--StartFragment--><p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><img alt="ush_priveski1" src="../Imagess/ush_priveski1.jpg"/><br/></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Ушные привески, также извест­ные как ушные придатки, — безопасные врожденные ано­малии развития. Они выглядят как маленькие свисающие лоскутки или шишечки, размером обычно с нако­нечник карандаша или немного боль­ше. Лечение зависит от их размера. Если привесок свисает с мочки в ви­де лоскутка или на тонком стебельке, врач может обвязать ножку в самом узком месте хирургической нитью. Это прекратит кровоснабжение при­веска, он станет меньше, и врач смо­жет безболезненно отрезать его. Если привесок маленький, но без ножки и&nbsp;расположен глубоко в слуховом про­ходе, то лучше оставить его в покое. Если привесок большой (больше, чем ластик на карандаше) и у него нет ножки, удаление (при желании) тре­бует вмешательства хирурга. Это мо­жет быть сделано в любом возрасте.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Хотя ушные привески безопасны, статистически есть небольшая связь между наличием их и повышенной вероятностью аномалии развития поч­ки. Поэтому иногда — при очень за­метных привесках — ваш врач может порекомендовать УЗИ почек, чтобы исключить аномалию развития.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><br/></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2; text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><br/></p>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

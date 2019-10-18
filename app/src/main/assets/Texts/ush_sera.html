@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;"><span style="font-family: 'LiberEmb';">УШНАЯ СЕРА</span><br/></h2>
+<!--StartFragment--><p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>&nbsp;</strong><img alt="ush_sera1" src="../Imagess/ush_sera1.jpg"/></p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Ушная сера образуется железа­ми, расположенными в коже наружного слухового прохода. Сера образует защитное покрытие,&nbsp;предохраняющее кожу от микробов и повреждений. Это часть механизма самоочищения наружного слухового прохода, который работает, посте­пенно вынося наружу микробов, пыль и другие загрязняющие частицы. Но у некоторых детей образуется слиш­ком много серы, что может забить на­ружный слуховой проход и ухудшить слух. Иногда серы образуется так мно­го, что ее можно видеть снаружи во­круг слухового прохода.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>ЧТО ДЕЛАТЬ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Если сера не доставляет неприят­ностей и не мешает слуху, оставьте ее в покое. Если она раздражает или на­рушает слух, ее можно безопасно удалить следующими способами:</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">• Используйте безрецептурный рас­твор, растворяющий серу и содер­жащий перекись водорода. Уложите ребенка ухом вверх и влейте 4 капли раствора в наружный слу­ховой проход. Ребенок должен по­лежать 10 минут. Это должно раз­мягчить серу настолько, что ее мож­но будет вымыть теплой водой из спринцовки или шланга.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">• Если дискомфорт сохраняется, врач может удалить серу специальным инструментом. Непосредственно пе­ред визитом закапайте в ухо ребен­ку раствор, размягчающий серу, — это облегчит работу врача и сделает процедуру более комфортной для ребенка.</p>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'LiberEmb'; orphans: 2; widows: 2;"><tbody><tr><td valign="top" width="100%"><p><strong>Никогда не пытайтесь ввести что-либо в наружный слуховой проход, чтобы удалить серу. Вы можете повредить барабанную перепонку или кожу прохода. Удалять избы­ток ушной серы из слухового про­хода должен врач.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div><br/></div>
+<br/>
+<!--EndFragment-->
+<div><br/></div>
+<p style="text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</p>
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

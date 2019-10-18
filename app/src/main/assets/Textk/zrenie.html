@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html >
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 id="mh_toc_2052" style="text-align: center; page-break-after: avoid; font-family: LiberEmb;">ЗРЕНИЕ</h2>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Видеть так, как взрослые, новорожденный, разумеется, не может. Все его реакции ограничиваются тем, что от очень яркого света он жмурится и иногда поворачивает к источнику света глаза. Уже к месячному возрасту малыш может ненадолго задерживать на чем-либо взгляд и также недолго за этим «чем-то» следить (речь идет о секундах). В течение последующих двух-трех месяцев возможность сопровождать взглядом движущийся предмет заметно улучшается. Вначале ребенок может следить лишь за игрушкой, которая движется в горизонтальной плоскости, но в четыре месяца уже свободно смотрит куда угодно – и вверх, и вниз, и в стороны. Ну а после этого возраста зрение начинает совершенствоваться очень быстро.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p class="b" style="text-align: center; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><img align="center" alt="Zrenie-u-novorozhdennyh-6-min" src="../Imagesk/Zrenie-u-novorozhdennyh-6-min.jpg"/><br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><b><br/></b></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><b>Советы и рекомендации:</b></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><b>1&nbsp;</b><i>нельзя допускать, чтобы в детской комнате была слабая освещенность. Это приводит к задержке способности различать цвета;</i></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><b>2&nbsp;</b><i>игрушки должны быть большими и яркими. Цвет их тоже имеет значение: в&nbsp;первом полугодии жизни – оптимально желтый и зеленый, а затем чем разнообразнее цвета, тем лучше;</i></p>
+<p><b style="font-family: LiberEmb; orphans: 2; text-align: justify; text-indent: 1em; widows: 2;">3&nbsp;</b><i style="font-family: LiberEmb; orphans: 2; text-align: justify; text-indent: 1em; widows: 2;">для того, чтобы ребенок научился правильно видеть, не стоит в первые три-четыре месяца вешать перед ним игрушки на близком расстоянии (менее 40&nbsp;см)&nbsp;– толком разглядеть он ничего не сможет, но есть риск развития косоглазия.</i>&nbsp;</p>
+<p class="b" style="text-align: right; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Е.О.Комаровский. "Здоровье ребенка"<br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</body>
+</html>

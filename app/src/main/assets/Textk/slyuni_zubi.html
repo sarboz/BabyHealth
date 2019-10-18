@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html >
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 id="mh_toc_2106" style=" text-align: center; page-break-after: avoid; font-family: LiberEmb;">СЛЮНИ И ЗУБЫ</h2>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Существует народная примета: если у ребенка активно побежали слюни – значит, скоро полезут зубы. Мой личный опыт эту мудрость не подтверждает. С двух-трех месяцев слюни бегут у всех, а зубы появляются, как правило, после шести.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Время появления зубов (при нормальном питании и уходе) зависит, главным образом, от наследственности – разумеется, в определенных пределах. Нет никаких оснований для беспокойства, если все абсолютно нормально, ребенку девять месяцев, а зубов нет.</p>
+<p><span style="font-family: LiberEmb; orphans: 2; text-align: justify; text-indent: 1em; widows: 2;">И еще один момент. Медицинская наука считает, что прорезывание зубов очень редко сопровождается развитием болезненного состояния. Но и практикующие врачи (автор в том числе), и подавляющее большинство родителей сплошь и рядом наблюдают, как у, казалось бы, здорового ребенка вдруг ни с того ни с сего портится настроение, повышается температура, иногда начинается понос. А через два-три дня прорезывается зуб, и все проходит.</span>&nbsp;</p>
+<p><br/></p>
+<p style="text-align: center; "><img align="center" alt="Shema-prorezyivaniya-zubov-u-detey" src="../Imagesk/Shema-prorezyivaniya-zubov-u-detey.jpg"/><br/></p>
+<p class="b" style="text-align: right; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Е.О.Комаровский. "Здоровье ребенка"<br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</body>
+</html>

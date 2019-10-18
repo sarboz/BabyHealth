@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;">&nbsp;<span style="font-family: 'LiberEmb';">«СИНИЕ» ПЯТНА НА СПИНЕ</span></h2>
+<div style="text-align: center; "><img alt="sinie_pyatna1" src="../Imagess/sinie_pyatna1.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Эти обширные, похожие на си­няки пятна в нижней части спины и на ягодицах называют «монгольскими пятнами», потому что это генетически связано с наличием предков монголоидной расы (азиаты, латиноамериканцы, негроиды и ин­дейцы). Такие пятна часто встречают­ся у детей, усыновленных из других стран, и наличие их связано со скоп­лением клеток-меланоцитов.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>ЧТО ДЕЛАТЬ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Эти пятна безопасны, не склонны к злокачественному росту и обычно исчезают ко времени поступления в школу. Иногда они могут в неболь­шой степени сохраняться у взрослых.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Несмотря на безобидность этих пятен, они иногда создают проблему для родителей. Мы наблюдали слу­чаи, когда родителей несправедливо обвиняли в жестоком обращении с детьми, приняв синие пятна за «следы шлепков». Во избежание таких не­приятностей мы обычно рекомендуем родителям фотографировать пят­на и описывать их в карточке ребен­ка, чтобы защитить себя от возмож­ных обвинений. Мы и сами отмечаем наличие пятен в карточке ребенка и всегда говорим об этом родителям. Записывая своего ребенка в детский сад, обязательно расскажите об «осо­бых пятнах» воспитателям и руковод­ству учреждения, чтобы избежать не­приятностей со «следами ударов».</p>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'LiberEmb'; orphans: 2; widows: 2;"><tbody><tr><td valign="top" width="100%"><p><strong><em>Как объяснить ребенку, откуда у него эти пятна.</em></strong><strong>&nbsp;Примерно в три года, когда дети уже достаточно взрослые, чтобы понимать, что это пятна, стоит в процессе игры рас­сказать и показать их ему. Скажи­те, что он родился с такими «осо­быми пятнами», и покажите ему фотографии. Заверьте его, что та­кие пятна есть у многих детей и что они обычно со временем исчезают.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<!--EndFragment-->
+<div><br/></div>
+<div><br/></div>
+<p style="text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</p>
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

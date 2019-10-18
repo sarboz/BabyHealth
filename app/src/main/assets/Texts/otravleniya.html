@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html >
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 id="mh_toc_12839" style="page-break-before: always; text-align: center; font-family: LiberEmb;">ОТРАВЛЕНИЯ</h2>
+<div><br/></div>
+<div style="text-align: center; "><img align="center" alt="otravleniya" src="../Imagess/otravleniya.jpg"/><br/></div>
+<div style="text-align: center; "><br/></div>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Устрашающе звучащий термин «отравления» означает проникновение веществ, наносящих организму вред, внутрь организма через заглатывание и вдыхание, а также кожный контакт с ними.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Хотя многие отравляющие вещества вызывают лишь кратковременное расстройство желудка, они могут тяжело повредить легкие и ткани кишечника; некоторые яды приводят к смерти.</p>
+<h4 id="mh_toc_12845" style="text-align: center; page-break-after: avoid; font-family: LiberEmb;">Что делать</h4>
+<div style="text-align: center; "><img align="center" alt="xim_otrav" src="../Imagess/xim_otrav.jpg"/><br/></div>
+<div style="text-align: center; "><br/></div>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Если ваш ребенок проглотил яд, вызовите местную токсикологическую службу. Телефон ее должен быть у вас на видном месте. Если нет, вызовите службу спасения или позвоните в больницу. Дайте следующую информацию:</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">•&nbsp;название проглоченного вещества и входящие в его состав ингредиенты;</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">•&nbsp;когда вещество было проглочено и в каком предполагаемом количестве;</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">•&nbsp;возраст и вес ребенка;</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">•&nbsp;симптомы: кашель, рвота, необычное поведение и т.&nbsp;д.;</p>
+<h4 id="mh_toc_12876" style="text-align: center; page-break-after: avoid; font-family: LiberEmb;">Ингаляционные отравления</h4>
+<div style="text-align: center; "><img align="center" alt="ing_otrav" src="../Imagess/ing_otrav.jpg"/><br/></div>
+<div style="text-align: center; "><br/></div>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Лак для ногтей, жидкость для снятия лака, поделочные и технические лаки, а также ацетонсодержащие углеводородные соединения могут быть токсичны для легких, почек и мозга развивающегося ребенка. Чтобы уберечь себя и ребенка, используйте эти вещества в хорошо проветриваемом помещении и ни в коем случае не в той комнате, где находится ребенок. Если ребенок вдохнул токсичные испарения, незамедлительно вынесите его на свежий воздух и следите, не появится ли сильный кашель или вялость, что требует медицинской помощи.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p id="mh_toc_12289" style="text-align: right; page-break-after: avoid; font-family: LiberEmb;">Марта, Уильям, Роберт, Джеймс Сирс"Ваш малыш от рождения до двух лет"</span></p>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</body>
+</html>

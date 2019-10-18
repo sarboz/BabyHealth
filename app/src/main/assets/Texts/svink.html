@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;">&nbsp;<span style="font-family: 'LiberEmb';">СВИНКА (ЭПИДЕМИЧЕСКИЙ ПАРОТИТ)</span></h2>
+<div style="text-align: center;"><img alt="svink1" src="../Imagess/svink1.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Это редкое заболевание недавно охватило Соединенные Штаты: в 2007 году было отмечено около 5000 случаев. До этого свинка считалась довольно нераспространен­ной, каждый год регистрировалось только 250 случаев. Хотя ваш ребе­нок, скорее всего, не заболеет свин­кой, вот наши советы, как распо­знать ее.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>СИМПТОМЫ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Лихорадка и ангина — первые симптомы, как и у многих других за­болеваний. Уникальный признак свинки — увеличение околоушных слюнных желез (слюнные железы с внутренней стороны щек непосред­ственно перед ушами). Железы ста­новятся болезненными, и жевание мо­жет доставлять дискомфорт. Инкубационный период — 16—18 дней. Человек становится источни­ком инфекции примерно за 2 дня до того, как увеличатся железы, и при­мерно еще 5 дней после.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><img alt="svink2" src="../Imagess/svink2.jpeg"/><strong><br/></strong></p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>КОГДА БЕСПОКОИТЬСЯ И ЧТО ДЕЛАТЬ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Специфического лечения от свин­ки нет. Самое главное, что нужно сделать, — распознать типичное уве­личение желез и затем изолировать ребенка. Позвоните врачу и узнайте о возможности визита к нему. Есть не­сколько осложнений, о которых не­обходимо знать.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Орхит (увеличение и боль в яич­ках).&nbsp;</strong>Это заболевание часто встреча­ется у мужчин, которые заболевают свинкой после периода полового со­зревания, и, как правило, безобидно. Бесплодие — крайне редкое послед­ствие орхита. Не существует лечения или вмешательства, которое могло бы повлиять на исход.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Менингит.&nbsp;</strong>Свинка может вызвать симптомы менингита. При подозре­нии на менингит обратитесь в отде­ление неотложной помощи.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><br/></p>
+<p style="font-family: 'LiberEmb'; text-align: right; font-variant-ligatures: normal; orphans: 2; widows: 2;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><br/></p>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

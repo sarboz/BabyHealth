@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;">&nbsp;<span style="font-family: 'LiberEmb';">РОДИМЫЕ ПЯТНА</span></h2>
+<div style="text-align: center; "><img alt="rodymye_pyatna1" src="../Imagess/rodymye_pyatna1.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Почти у всех младенцев с рож­дения либо чуть позже появ­ляются розовые, синеватые или красные пятна на коже. Это свя­зано с подкожными сосудистыми сплетениями. У растущих детей кожа растет быстро и в ней содержится много развивающихся кровеносных сосудов. Области, где их особенно много, проступают на коже в виде ро­димых пятен. Чаще всего вы можете увидеть два вида их:</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Укусы аиста.&nbsp;</strong>Это красноватые пятна, обычно располагающиеся на задней поверхности шеи, лбу или ве­ках. Медики называют их невусами, но используют и шутливое «укусы аиста». Они представляют собой до­полнительные кровеносные сосуды под тонкой кожей. По мере роста ре­бенка кожа становится толще и по­степенно эти пятна исчезнут. Посколь­ку пятна на лбу становятся ярче, когда ребенок кричит, матери иногда име­нуют их «лобными фарами». Они обыч­но исчезают в возрасте от года до двух лет.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><img alt="rodymye_pyatna2" src="../Imagess/rodymye_pyatna2.jpg"/><br/></p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Ежевички.&nbsp;</strong>Это другой распро­страненный вид родимых пятен. На медицинском языке их называют гемангиомами, и они вызваны тем, что кровеносные сосуды под кожей рас­тут, и растут до тех пор, пока не про­толкнутся сквозь кожу. Некоторые становятся настолько большими, что напоминают ягоду ежевики. Обычно они появляются на первом году жиз­ни, достигают максимального разме­ра к году или двум, начинают умень­шаться в 3—5 лет и совсем исчезают к подростковому возрасту. Темпы роста и уменьшения у разных детей варьи­руют, но, если вы заметили, что центр «ежевички» стал серого цвета — это значит, что сосуды перестали расти и «ежевичка» начинает уменьшаться. Эти образования безопасны, они не склонны превращаться в злокачест­венные опухоли и редко нуждаются в каком-либо лечении. Только иногда бывает необходимо удаление с помо­щью лазера, если они расположены так, что мешают функции органа — например, на веке. Несмотря на то что большинство малышей даже не замечают этих «особых пятен», суще­ствует вредный обычай удалять их, что может привести к кровотечению или инфицированию раны.</p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><br/></p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2; text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><br/></p>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html >
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 id="mh_toc_3554" style=" text-align: center; page-break-after: avoid; font-family: LiberEmb;">ПРОСТУДА</h2>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">ОРВИ, как мы уже поняли, болезнь заразная. Обнаружив у себя или у ребенка недомогание, насморк, кашель и повышение температуры тела, среднестатистический житель нашей страны никогда не произнесет слово «ОРВИ», но на вопрос: «что случилось?» ответит однозначно и убежденно –&nbsp;<i>простудился</i>. Именно в этой связи очень хотелось бы объяснить разницу между такими понятиями, как «простудился» и «заразился», поскольку значение часто употребляемого слова «простуда» на самом деле не всем известно.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Итак, заглянем в толковый словарь:</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><i><b>ПРОСТУДА&nbsp;</b>1. Охлаждение, которому подвергся организм. 2. Болезнь, вызванная таким охлаждением&nbsp;</i>(разг.).</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><i><b>Главный вывод&nbsp;</b></i>из этого определения состоит в том, что&nbsp;<i>простуда, как правило, не имеет никакого отношения к ОРВИ</i>. И в носу, и в глотке, и в бронхах имеется достаточное количество микробов (не вирусов, а бактерий), которые вызывают заболевания (все те же фарингиты и тонзиллиты) при ослаблении защитных сил организма, чему и способствуют переохлаждения, повышенная потливость, хождение босиком, избыточные физические нагрузки, сквозняки, холодная вода. А заболеть ОРВИ – это значит заразиться от уже больного человека.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p class="b" style="text-align: center; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><img align="center" alt="3_587dcd48e9393" src="../Imagesk/3_587dcd48e9393.jpg"/><br/></p>
+<p><span style="font-family: LiberEmb; orphans: 2; text-align: justify; text-indent: 1em; widows: 2;"><br/></span></p>
+<p><span style="font-family: LiberEmb; orphans: 2; text-align: justify; text-indent: 1em; widows: 2;"><span class="Apple-tab-span" style="white-space:pre">	</span>Очевидно, что третий пункт описанных выше принципов профилактики вирусных инфекций<span style="font-size: 13.236266136169434px;">&nbsp;</span></span><span style="font-family: LiberEmb; orphans: 2; text-align: justify; text-indent: 1em; widows: 2;">связан с простудой самым тесным образом. Ведь избежать простуд можно либо радикально (адекватным воспитанием), либо тщательно оберегая ребенка от нормальной жизни.</span>&nbsp;</p>
+<p class="b" style="text-align: right; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Е.О.Комаровский. "Здоровье ребенка"<br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</body>
+</html>

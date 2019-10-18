@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;"><span style="font-family: 'LiberEmb';">УШНАЯ БОЛЬ В САМОЛЕТЕ</span><br/></h2>
+<div style="text-align: center; "><img alt="ush_bol1" src="../Imagess/ush_bol1.jpg"/></div>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Быстрое изменение давления в салоне при приземлении само­лета может привести к повы­шению давления в среднем ухе, что сопровождается болью. Это особенно ярко появляется, если у ребенка на­сморк или аллергия, из-за чего могут забиться евстахиевы трубы — естест­венный выравниватель давления ме­жду носоглоткой и средним ухом. Ребенку, выздоравливающему после отита, полезно летать на самолете, если, конечно, ваш врач не считает иначе. Боль в ушах обычно появляет­ся при приземлении и редко стано­вится проблемой при взлете. Когда самолет начнет опускаться, попро­буйте эти способы успокоить боль в ушах:</p>
+<ul style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><li>Покормите младенца грудью или из бутылочки, ребенку постарше просто дайте что-нибудь выпить. Глотание помогает открыть евстахиевы трубы.</li>
+<li>Увлажняйте сухой воздух салона. Поместите салфетку, смоченную теплой водой, возле носа ребенка, чтобы увлажнить дыхательные пути и держать открытыми евстахиевы трубы.</li>
+<li>Разбудите ребенка. Это, наверное, единственный случай, когда вы за­хотите его разбудить, так как евста­хиевы трубы часто недостаточно хорошо выравнивают давление, ес­ли ребенок спит.</li>
+<li>Предложите ребенку старшего воз­раста поговорить, высморкаться, надуть воздушный шарик или пус­кать пузыри через соломинку в ста­кан с водой, позевать, подвигать челюстью, чтобы широко открыть рот. Хотя обычно мы не рекомен­дуем жевательную резинку, при взлете и посадке она может помочь старшим детям.</li>
+<li>Пусть ребенок зажмет нос и поста­рается выдохнуть через сжатые губы, надувая щеки.</li>
+<li>Не старайтесь заставить ребенка замолчать, так как крик способст­вует открытию евстахиевых труб.</li>
+</ul>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'LiberEmb'; orphans: 2; widows: 2;"><tbody><tr><td valign="top" width="100%"><p style="text-align: center;"><strong>СОВЕТ ДОКТОРОВ СИРС: НИКАКИХ НОВЫХ ЛЕКАРСТВ</strong></p>
+<p><strong>Никогда не давайте ребенку ле­карства (такие, как седативные, противоотечные, антигистамин­ные), если вы не давали их рань­ше. Меньше всего вам нужна ана­филактическая реакция на препа­рат на высоте 35 000 футов (около 11 км) над землей.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Заранее очистите нос.&nbsp;</strong>На протя­жении нескольких дней перед поезд­кой промывайте нос и делайте па­ровые ингаляции.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Не пользуйтесь противоотечными средствами.&nbsp;</strong>Как показали исследова­ния, противоотечные и антигистамин­ные препараты бесполезны во время полета на самолете.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><br/></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2; text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><br/></p>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

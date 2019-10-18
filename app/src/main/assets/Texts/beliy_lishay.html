@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+
+</style>
+<body>
+<!--StartFragment--><h2  style="text-align: center; font-variant-ligatures: normal; orphans: 2; widows: 2;"><span
+        style="font-family: 'LiberEmb';">БЕЛЫЙ ЛИШАЙ</span><br/></h2>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">
+    <img alt="beliy_lishay-1" src="../Imagess/beliy_lishay-1.jpg"/><strong>&nbsp;</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Белый
+    лишай — распространен­ное кожное заболевание, кото­рое, как правило, поражает детей возрасте от
+    6 до 12 лет. Дети младшего и старшего возраста также могут охватить это заболевание. У детей с
+    белым лишаем появляются участки более светлой кожи, обычно на лице, но, когда на шее, груди и
+    руках. Поскольку врачи не знают настоящей причины этого заболевания, принято считать его
+    разновидностью экземы . Эти пятна становятся более заметными в солнечные летние месяцы, потому
+    что здоровые участки кожи становятся темнее, а светлые пятна пытаются того же цвета. Может быть
+    можно увидеть светлые участки, пока вы не подойдете близко, особенно у детей со светлой кожей.
+    Они не сопровождаются зудом или болью.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">
+    &nbsp;<strong>ДИАГНОСТИКА</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Ваш врач
+    обычно может диагнозировать это заболевание по классическому внешнему признаку участков
+    беловатой кожи. Тем не менее существует похожее кожное заболевание, званное грибком, известным
+    как разноцветный лишай. Ваш врач может отличить два этих вида, собрав не­большой соскоб светлого
+    участка, за­тем положив его на предметное стек­ло со специальной жидкостью и изу­чив его под
+    микроскопом. Если при­чиной этого является разноцветный лишай, будет виден грибок.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">
+    <img alt="beliy_lishay-2" src="../Imagess/beliy_lishay-2.jpg"/><br/></p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">
+    &nbsp;<strong>ЧТО ДЕЛАТЬ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Лечение
+    практически никогда не требуется, поскольку это заболева­ние постепенно проходит само по се­бе.
+    Для полного исчезновения белых участков может потребоваться не­сколько месяцев. Ежедневное
+    увлаж­нение может поспособствовать более быстрому выздоровлению. Можно использовать
+    гидрокортизон или по­добные стероидные кремы, тем не менее обычно это не рекомендуется, если
+    только у вашего ребенка не сложный случай. Нельзя наносить эти кремы дольше двух недель, если
+    только ваш врач не советует иначе.</p>
+<table border="1" cellpadding="0" cellspacing="0" width="100%"
+       style="font-family: 'LiberEmb'; orphans: 2; widows: 2;">
+    <tbody>
+    <tr>
+        <td valign="top" width="100%"><p style="text-align: center;"><strong>СОВЕТ ДОКТОРОВ СИРС:
+            БОЛЬШИНСТВО УМЕРЕННЫХ СЫПЕЙ - БЕЗОБИДНЫ</strong></p>
+            <p style="text-align: center;"><strong>Если сыпь не вызывает зуд, не со­читься и не
+                распространяется, не волнуйтесь!</strong></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>&nbsp;</strong>
+</p>
+<p style="text-align: right;">&nbsp;Здоровье ребенка от докторов Сирс / Сирс У. и др.</p>
+
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

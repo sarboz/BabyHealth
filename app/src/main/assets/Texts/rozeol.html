@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;">&nbsp;<span style="font-family: 'LiberEmb';">РОЗЕОЛА</span></h2>
+<div style="text-align: center; "><img alt="rozeol1" src="../Imagess/rozeol1.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Распространенное заболевание вызывается вирусом герпеса 6-го типа, который не имеет ничего общего с герпесом, передавае­мым половым или оральным путем; это просто еще один представитель семейства герпесов. Симптомы розе­олы довольно четкие: 3 дня высокой лихорадки, за которыми следует по­явление неспецифической вирусной сыпи. Сыпь, как правило, сначала появляется на задней стороне шеи и на верхней части спины и выглядит как плоские красные пятна или не­большие припухлости (папулы). Она может распространиться на лицо, грудь, живот и иногда на конечности. Сыпь не вызывает зуда и нет необхо­димости в применении лосьонов или какого-либо другого лечения. Высы­пания держатся от нескольких дней до двух недель. У некоторых детей может вообще не появиться никакой сыпи — просто высокая лихорадка. Хотя лихорадка может причинять не­удобство, в конечном итоге она не принесет никакого вреда.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>ДИАГНОСТИКА</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Родители и врачи не могут опре­делить, что ребенок болен розеолой, пока не спадет лихорадка и не появит­ся сыпь. Диагноз ставится постфак­тум. Поскольку первый симптом — только лихорадка, врач будет искать другие очевидные причины ее, на­пример инфекцию уха или горла. Ес­ли он ничего подобного не найдет и не будет никаких других симптомов, которые могли бы объяснить лихорадку (например, кашель, заложен­ность носа, диарея), врач придет к выводу, что, скорее всего, она вызва­на вирусом. Если врач не увидит ре­бенка до появления сыпи, наличие трехдневной лихорадки, за которой последовала сыпь, сделает диагноз очевидным. У некоторых детей затем также появятся насморк, кашель, рво­та или диарея.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><img alt="rozeol2" src="../Imagess/rozeol2.jpg"/><br/></p>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'LiberEmb'; orphans: 2; widows: 2;"><tbody><tr><td valign="top" width="100%"><p><strong>Розеола передается как обычная ОРВИ. Ребенок опасен для окру­жающих за день до появления ли­хорадки и до двух дней после того, как лихорадка спадет, даже если сыпь все еще сохраняется. Инку­бационный период составляет примерно 10 дней. Нет никакого специального лечения этой сыпи, только снижение температуры тела.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>КОГДА БЕСПОКОИТЬСЯ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">На самом деле нет необходимости беспокоиться по поводу розеолы, если лихорадка не вызывает волнений.</p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><br/></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2; text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><br/></p>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

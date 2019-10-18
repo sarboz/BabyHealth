@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html >
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 id="mh_toc_3703" style=" text-align: center; page-break-after: avoid; font-family: LiberEmb;">КАШЕЛЬ</h2>
+<div><br/></div>
+<div style="text-align: center; "><img align="center" alt="rebenok_kashlyaet" src="../Imagesk/rebenok_kashlyaet.jpg"/><br/></div>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Любой нормальный человек должен хотя бы иногда кашлять. Организм таким образом очищает легкие от слизи, которая в них накапливается. Иначе быть не может, потому что дышит человек не самым чистым воздухом. При любых болезнях легких и верхних дыхательных путей количество слизи увеличивается – надо чистить бронхи и нейтрализовать вирусы и бактерии. А накапливающуюся слизь (она называется мокротой) организм удаляет посредством кашля.</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Как и в отношении носа, главное – предотвратить высыхание мокроты: все тот же прохладный влажный воздух и питье. Категорически недопустимо без указания врача давать лекарственные средства, угнетающие кашель (либексин, пакселадин, синекод, бронхолитин)! Эти препараты хороши при одной-единственной детской инфекции – коклюше, да и то под постоянным врачебным контролем. Во всех остальных случаях следует, если уж невмоготу, использовать лекарства, воздействующие на мокроту (делающие ее менее густой) и усиливающие сокращение бронхов. Кашель, каким бы он ни был, всегда позволяет дождаться участкового педиатра и посоветоваться. Вполне безвредны и довольно эффективны мукалтин, нашатырно-анисовые капли, калия иодид, бромгексин, ацетилцистеин, амброксол. Их неплохо иметь в доме, но дозы и целесообразность применения в каждом конкретном случае уточнять (не у соседки, разумеется, а у врача).</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p class="b" style="text-align: center; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p class="b" style="text-align: right; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Е.О.Комаровский. "Здоровье ребенка"<br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</body>
+</html>

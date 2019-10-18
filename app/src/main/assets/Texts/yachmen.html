@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;"><span style="font-family: 'LiberEmb';">ЯЧМЕНЬ</span><br/></h2>
+<!--StartFragment--><p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>&nbsp;</strong><img alt="yachmen1" src="../Imagess/yachmen1.jpeg"/></p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Ячмень — это бактериальное вос­паление желез, расположенных у основания века, проявляющее­ся образованием фурункула у края века. Он болит, когда ребенок его тро­гает, но, как правило, не влияет на зрение и не приводит к воспалению самого глазного яблока. Это может со­провождаться блефаритом — воспале­нием век — или появляться вследствие него.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>ЧТО ДЕЛАТЬ</strong></p>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Лечите ячмень:</p>
+<ul style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><li>Прикладывайте теплый компресс (например, марля, смоченная настолько теплой водой, какую ребенок сможет выдержать) на 10 минут по меньшей мере 6 раз в день. Горячие компрессы, как правило, способствуют «созреванию» ячменя — появлению у него желтой головки, которая лопается и осушается сама по себе. Чтобы ускорить осушение, продолжайте прикладывать горячие компрессы еще несколько дней. Никогда не пытайтесь выдавить или вскрыть любую опухоль на веке, поскольку это, скорее всего, только ухудшит дело. Если головка ячменя выглядит созревшей, но не лопается сама, несмотря на компресс, обратитесь за помощью к врачу.</li>
+<li>Ваш врач может назначить мазь с антибиотиком для нанесения на ячмень и прилегающую область в районе века.</li>
+<li>Дети не должны делать макияж или носить контактные линзы, по­ка ячмень не пройдет.</li>
+</ul>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Иногда ячмень может сформиро­ваться внутри века и превратиться в опухоль, называемую&nbsp;<em>гордеолум.</em>&nbsp;Или если ячмень появляется на веке и превращается в очень большую шиш­ку, он называется&nbsp;<em>халазион.</em>&nbsp;Эти заболевания лечатся так же, как ячмень, но дольше.</p>
+<p style="text-align: center; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><img alt="yachmen2" src="../Imagess/yachmen2.jpg"/><br/></p>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="text-align: justify; font-family: 'LiberEmb'; orphans: 2; widows: 2;"><tbody><tr><td valign="top" width="100%"><p><strong>Халазион вначале выглядит как яч­мень, но позже может превратиться в болезненную опухоль, которая пройдет сама по себе в течение не­скольких месяцев. Если опухоль сохраняется дольше, окулисту, воз­можно, придется дренировать ее. Горячие компрессы поспособству­ют заживлению халазиона. Мест­ное применение антибиотиков, как правило, не дает результата.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/><br/>
+
+
+
+<p class="MsoNormal" style="text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</p>
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

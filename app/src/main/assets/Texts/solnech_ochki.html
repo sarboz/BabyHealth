@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;">&nbsp;<span style="font-family: 'LiberEmb';">СОЛНЕЧНЫЕ ОЧКИ ДЛЯ ДЕТЕЙ</span></h2>
+<div style="text-align: center; "><img alt="solnech_ochki1" src="../Imagess/solnech_ochki1.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Возрастная группа, больше всего нуждающаяся в солнечных оч­ках, с наименьшей вероятно­стью будет носить их. У глаз младен­цев и детей действительно больше шансов пострадать от солнечного све­та, потому что через их относительно большие зрачки в глаз попадает боль­ше разрушительного ультрафиолета. Избыток ультрафиолетового излуче­ния «окисляет», что означает, что он травмирует сетчатку и другие ткани глаза, увеличивая риск развития во взрослом возрасте двух проблем: ка­таракты и дистрофии желтого пятна. По мере того как дети растут и дости­гают подросткового возраста, хруста­лики глаз приобретают способность отражать больше разрушительного ультрафиолетового света.</p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">Подбор солнечных очков для ма­леньких глазок: офтальмологи советуют искать очки, на которых напи­сано «блокируют 99% ультрафиоле­товых лучей» или «отвечает требова­ниями&nbsp;ANSI» (Американского на­ционального управления стандарти­зации). Избегайте игрушечных сол­нечных очков, особенно очень тем­ных. Ношение их на самом деле мо­жет быть более опасно, поскольку зрачки увеличиваются и пропускают больше ультрафиолетового света. Ес­ли ваш ребенок отказывается носить солнечные очки, наденьте сами ка­кие-нибудь модные очки, и ваш ре­бенок, скорее всего, захочет подра­жать вам. Для дополнительной защи­ты глаз научите ребенка не смотреть прямо на солнце и приучите его но­сить бейсболки или панамки, кото­рые защитят растущие и чувствитель­ные глаза.</p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><br/></p>
+<p style="text-align: justify; font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2; text-align: right;">Здоровье ребенка от докторов Сирс / Сирс У. и др.</span><br/></p>
+<!--EndFragment-->
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>

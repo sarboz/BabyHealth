@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html >
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 id="mh_toc_1052" style=" text-align: center; page-break-after: avoid; font-family: LiberEmb;">ПУПОК</h2>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Именно пупочная ранка принципиально отличает новорожденного от детей постарше. Из-за риска инфицирования до ее заживления нежелательна общая ванна, вообще нежелательно, чтобы в незаживший пупок попадала вода.При выписке из роддома в обычные сроки (пятый – седьмой день) пупочная ранка полностью зажить не успевает. Традиционно принято обрабатывать пупок раствором бриллиантового зеленого (зеленкой). И делать это надо ежедневно до тех пор, пока ранка не станет полностью сухой. Никогда не ковыряйтесь в детском пупке спичкой, обмотанной ватой. Возьмите пипетку и капните в пупок 1–2 капли зеленки, после чего подождите, пока высохнет. Если имеются небольшие кровянистые выделения, приложите на пару минут ватный тампон, смоченный перекисью водорода (перед тем, как капать зеленку).</p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+<p class="b" style="text-align: center; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><img align="center" alt="94f7da1c4d585587c7aed7975e9fd3dd" src="../Imagesk/94f7da1c4d585587c7aed7975e9fd3dd.jpg"/><br/></p>
+<p><span style="orphans: 2; text-align: justify; text-indent: 1em; widows: 2; font-family: LiberEmb;"><br/></span></p>
+<p><span style="orphans: 2; text-align: justify; text-indent: 1em; widows: 2; font-family: LiberEmb;"><span class="Apple-tab-span" style="white-space:pre">	</span>Пупок новорожденного может стать причиной некоторых болезней, которые, к счастью, довольно редки. Тем не менее родители должны знать ситуации, при которых только врач способен к принятию адекватных решений: кровотечение или выделение гноя из пупочной ранки, краснота кожи вокруг пупка, пупок, мокнущий более трех недель после рождения. У очень многих детей первого года жизни имеется пупочная грыжа (выпячивание в области пупка, появляющееся, чаще всего, при крике). В подавляющем большинстве случаев она не представляет никакой опасности, не требует никакого лечения и проходит сама по мере роста ребенка и укрепления мышц брюшного пресса.</span>&nbsp;</p>
+<p class="b" style="text-align: right; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;">Е.О.Комаровский. "Здоровье ребенка"<br/></p>
+<p class="b" style="text-align: justify; orphans: 2; widows: 2; margin: 0px; font-family: LiberEmb; text-indent: 1em; padding: 0px;"><br/></p>
+															</span></span></p>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</body>
+</html>

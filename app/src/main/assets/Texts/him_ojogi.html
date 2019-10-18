@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+</head>
+<meta charset="utf-8">
+<style>
+html, body {
+max-width: 97%;
+padding: 5px;
+overflow-x: hidden;
+text-align: justify;
+}
+img{
+	width: 100%;
+}
+</style>
+<body>
+<h2 style="text-align: center; orphans: 2; widows: 2;"><span style="font-family: 'LiberEmb';">ХИМИЧЕСКИЕ ОЖОГИ</span></h2>
+<div style="text-align: center; "><img alt="him_ojogi1" src="../Imagess/him_ojogi1.jpg"/><span style="font-family: 'LiberEmb';"><br/></span></div>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;">При химическом ожоге кожи:</p>
+<ul style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><li><strong>Удалите одежду, на которую попал химикат.&nbsp;</strong>Делайте это аккурат­но, не допуская попадания химиката на другие участки кожи. При необхо­димости срежьте одежду ножницами.</li>
+<li><strong>Промывайте кожу прохладной проточной водой в течение 15 минут.&nbsp;</strong>Это удалит остатки химиката с обож­женной поверхности.</li>
+<li><strong>Закройте обожженный участок&nbsp;</strong>сухой стерильной свободной повяз­кой или чистой тканью.</li>
+<li>Незначительные химические ожоги обычно заживают самостоя­тельно и не требуют дальнейшего ле­чения. Для уменьшения боли можно дать ацетаминофен или ибупрофен. Спрей от солнечных ожогов поможет при неприятных ощущениях в месте ожога.</li>
+</ul>
+<p style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><strong>Обратитесь за медицинской помо­щью, если:</strong></p>
+<ul style="font-family: 'LiberEmb'; font-variant-ligatures: normal; orphans: 2; widows: 2;"><li>у ребенка наблюдаются симптомы шока: бледность, потеря сознания, затрудненное дыхание;</li>
+<li>химикат проник в глубжележащие слои кожи и образовавшийся ожог второй или третьей степени (кожа покрывается пузырями) больше 2— 3 дюймов (5—7,5 см) в диаметре;</li>
+<li>химический ожог в области глаза, на руках, ногах, лице, ягодицах, в паху или в области большого сустава;</li>
+<li>если вы не знаете, ядовито ли ве­щество, обратитесь в санитарно-эпидемиологическую службу. От­правляясь туда, возьмите емкость с веществом или полное описание его для идентификации.</li>
+</ul>
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'LiberEmb'; orphans: 2; widows: 2;"><tbody><tr><td valign="top" width="100%"><p style="text-align: center;"><strong>СОВЕТ ДОКТОРОВ СИРС: ДЕРЖИТЕ ПОД ЗАМКОМ!</strong></p>
+<p><strong>Убедитесь, что храните опасные химикаты в месте, куда дети не смогут добраться. Ящики с замка­ми «от детей» недостаточно безо­пасны для столь важной вещи, как безопасность вашего ребенка. Храните химикаты в запертых ящиках, расположенных высоко и вне досягаемости для ребенка.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<!--EndFragment-->
+<div><br/></div>
+<div><span style="font-family: 'LiberEmb', serif; text-align: right;"><br/></span></div>
+<p style=" text-align: right;"> Здоровье ребенка от докторов Сирс / Сирс У. и др.<br/></p>
+</body>
+<script>
+function getHtmlText() {
+    var s=document.documentElement.innerHTML;
+    JsHtml.getHtml(s.toString());
+}
+function changeBackgroundColor(a,b){
+       document.body.style.cssText = "background-color:"+a+";color:"+b+";"
+}
+document.body.onload = function(){
+     document.body.style.fontSize =my.getItem("TextSize");
+};
+my = window.localStorage;
+var fontSize = 16;
+var dSize = 4;
+function setSize() {
+	var textContainer = document.querySelector("body");
+ 	var heightBefore = textContainer.scrollHeight;
+    var scrollBefore = textContainer.scrollTop;
+    var percBefore = scrollBefore / heightBefore;
+	textContainer.style.fontSize = fontSize + "px";
+    var heightAfter = textContainer.scrollHeight;
+    var scrollAfter = textContainer.scrollTop;
+    var percAfter = scrollAfter / heightAfter;
+    var correctedScrollAfter = Math.floor(heightAfter * percBefore);
+    textContainer.scrollTop = correctedScrollAfter;
+}
+function incFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.min(fontSize + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+        var s=my.getItem("TextSize");
+        fontSize = Math.min(Number(s.substring(0,s.length-2)) + dSize,36);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function decFontSize() {
+    if(my.getItem("TextSize")===null){
+        fontSize = Math.max(fontSize - dSize, 16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }else{
+       var s=my.getItem("TextSize");
+        fontSize = Math.max(Number(s.substring(0,s.length-2)) - dSize,16);
+        my.setItem("TextSize",fontSize+"px");
+        setSize();
+    }
+}
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+    return text;
+}
+document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+  showAndroidToast(getSelectionText());
+};
+function showAndroidToast(toast) {
+    if(toast!=""){
+        Android.showToast(toast);
+    }
+}
+function changeSelectedColor(color,id) {
+    var sel = document.getSelection();
+    document.designMode = "on";
+    var selectedHtml = "";
+    if (sel.rangeCount) {
+        var container = document.createElement("div");
+        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+            container.appendChild(sel.getRangeAt(i).cloneContents());
+        }
+        selectedHtml = container.innerHTML;
+    }
+    var html = "<span id='"+id+"' style='background-color:#AABDB7;'>"+selectedHtml+"</span>";
+    document.execCommand('insertHTML', false, html);
+    document.designMode = "off";
+}
+</script>
+</html>
